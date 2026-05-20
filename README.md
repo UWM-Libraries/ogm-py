@@ -36,12 +36,11 @@ python -m ipykernel install --user --name ogm-py --display-name "Python (ogm-py)
 * CSV of sample OGM Aardvark metadata that has missing or incorrect values
 * Jupyter Notebook scans the metadata, fixes it, and produces a log of actions taken
 
-## package-ingest
-
-* Jupyter Notebook for packaging project files for ingest workflows
-
-
 ## metadata-profile
 
 * `aardvark.csv`: Documentation of the OGM Aardvark profile
 * `referenceURIs.csv`: Keys and values of the types of references specified in the OGM Aardvark profile and viewable with GeoBlacklight
+
+## archive
+
+* `archive/cuba-census`: Older Cuba Census ingest packaging notebook retained for reference.
