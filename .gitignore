@@ -41,8 +41,8 @@ htmlcov/
 .LSOverride
 
 # Generated workflow outputs
-csv2JSON/json_output/*
-!csv2JSON/json_output/.keep
-Clean-Validate/cleaned_*.csv
-Clean-Validate/cleaning_log.csv
-Ingest/output/
+export-aardvark-json/json_output/*
+!export-aardvark-json/json_output/.keep
+clean-validate/cleaned_*.csv
+clean-validate/cleaning_log.csv
+package-ingest/output/
