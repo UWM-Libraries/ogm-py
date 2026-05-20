@@ -49,3 +49,18 @@ CDC PLACES health-related social needs data include food insecurity among severa
 | Health | Obesity | Obesity prevalence among adults age 18+ | [Obesity-2022.xlsx](https://datayoucanuse.org/wp-content/uploads/2025/03/Obesity-2022.xlsx) |
 | Health | Mental Health | Prevalence of adults age 18+ reporting 14 or more poor mental health days | [Mental-Health-2022.xlsx](https://datayoucanuse.org/wp-content/uploads/2025/03/Mental-Health-2022.xlsx) |
 | Health | Visits to Dentist or Dental Clinic | Prevalence of adults age 18+ reporting a dental visit in the last year | [Dental-Visits-2022.xlsx](https://datayoucanuse.org/wp-content/uploads/2025/03/Dental-Visits-2022.xlsx) |
+
+## Proposed Collection Structure
+
+Model the 2025 release as one top-level collection, five category subcollections, and 19 dataset records.
+
+- Top-level collection: `Data You Can Use MKE Indicators Milwaukee, Wisconsin 2025`
+- Category subcollections: Equitable Housing, Population, Market Value, Equity & Access, and Health
+- Dataset records: one record for each 2025 indicator listed above
+
+Use `Member Of` relationships to connect the records:
+
+- Category subcollections are members of the 2025 top-level collection.
+- Dataset records are members of both the 2025 top-level collection and their category subcollection.
+
+This follows the existing 2024 example pattern while matching the category structure on the Data You Can Use source page.
