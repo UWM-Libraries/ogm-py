@@ -10,6 +10,8 @@ Source page: [MKE Indicators | Data, Resources, Archives](https://datayoucanuse.
 
 ## Existing GeoBlacklight Examples
 
+`DYCU_2025/existing_records/2024-2020-metadata-table.csv` is provided for reference, it includes the table I got from Olivia but is NOT complaint with these scripts yet (the scripts expect clean CSV and this has som json-like info in there.)
+
 | Role | GeoBlacklight record | ID | Local example file |
 | --- | --- | --- | --- |
 | 2020 collection | [Data You Can Use MKE Indicators Milwaukee, Wisconsin 2020](https://geodiscovery.uwm.edu/catalog/ark:-77981-gmgsvt4bc1t) | `ark:-77981-gmgsvt4bc1t` | `existing_records/gmgsvt4bc1t.json` |
