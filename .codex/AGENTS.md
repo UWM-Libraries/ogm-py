@@ -1,0 +1,52 @@
+# Working Agreements
+- Check for global .codex/AGENTS.md files in home folder for general guidance
+- This project is still in an early planning/prototyping phase. Do not assume that a final repository structure exists yet.
+- Work interactively and one step at a time. Prefer short orientation, a proposed next step, and confirmation before making structural changes.
+- Before making breaking, hard-to-reverse, or project-shaping changes, check with Stephen first. This includes moving/renaming files, creating a new package layout, deleting files, changing notebook behavior, adding dependencies, or reorganizing folders.
+- Small documentation edits are OK when explicitly requested, but code, notebook, data, and structure changes should be discussed first unless Stephen clearly asks for implementation.
+- Keep notebooks as an important part of the workflow. The goal is not a one-and-done script; it is an interactive metadata processing workflow where users can inspect, normalize, validate, and export records step by step.
+- Favor reusable helper modules over duplicated notebook logic when the time comes, but preserve notebooks as the user-facing workflow interface.
+- Treat project/batch folders as a likely design direction: each metadata project should be able to retain its inputs, OpenRefine exports, working tables, generated JSON, and logs for future reference without hardcoding one project into the next.
+- Plan for OpenRefine integration. OpenRefine may remain a manual/interactive normalization step, but workflows should support predictable UTF-8 CSV handoffs, documented export expectations, and reusable transformation notes where practical.
+- Avoid Excel-centered workflows where possible because spreadsheet auto-formatting and encoding changes can damage metadata. Prefer UTF-8 CSV, OpenRefine, pandas, and explicit validation.
+- Preserve old project examples as reference material, but avoid baking one-off DYCU, OpenIndexMaps, or CKAN assumptions into generic workflow code.
+- The goal here is to create a metadata python processing workflow for AGSL GeoDiscovery to harvest data like:
+    - Updated Datasets from external sources that we download and provide our own download access to as well as new geospatial data in our local collections.
+    - Harvested datasets so we can provide links out to hosted datasets
+    - AGSL Maps and OpenIndexMaps. While openindexmaps are pretty much already supported, our next big project will be adding AGSL Maps to the geoportal, so we want to make sure we can accommodate that use case.
+    - We also use the relationship fields to define collections and related documents or even create a metadata record at the collection level. Our scripts should be able to accommodate this!
+
+- ## Metadata Processing Python Workflow
+Project goals
+- Make a CSV Header version of the UWM Aardvark Schema that includes fields for:
+    - Geospatial Data in our collection
+    - Geospatial Data Endpoints Harvested from DCAT/CKAN/Etc.
+    - Collection/Group fields like member_of, is_part_of, etc.
+    - All the dct_references_s stuff that we think we might need (download URL, oim endpoint, IIIF service, etc.)
+    - AGSL Maps 
+    - Maybe even populate one of each type in a test table for testing out the scripts.
+- Make a process to add new fields to accommodate edge cases/future new cases.
+    - I want to start thinking about setting up for the future/sustainability
+        - What will happen when OGM Badger (or whatever the next version is called) comes out, can we be responsive and update as needed?
+        - What about when we switch to the OGM Metadata API instead of GeoBlacklight? The schema may not change but the implementation in front-end might.
+        - How can I get GIS student interns involved in this work
+            - filling out the metadata table
+            - spell checking/fact checking/QAQC
+- "Old" repos to reference:
+    - https://github.com/srappel/btaa-metadata-harvesting-guide - This has some code and notebooks but it's very descriptive.
+    - https://github.com/srappel/metadata-scripts - This is an old repo that UMASS Amherst made but It's worth  investigating to see if there's stuff worth keeping or adapting
+    - https://github.com/srappel/metadata-workshop - This is my local version of the "workshop code" which we used to process the DYCU data into Aardvark (after making some local adjustments.)
+        - It's a fork of: https://github.com/OpenGeoMetadata/workshop
+    - I think we should also keep an eye on https://github.com/UWM-Libraries/ogm-metadata-studio and think how this project can dovetail with that
+    - Some more links to scripts at https://opengeometadata.org/scripts/
+- Stop trying to keep it in the "workshop" format and instead structure it as a metadata processing tool, not a library but a workflow?
+    - Although how cool would it be create an ogm-py library!
+- Testing and documentation as we go
+- References:
+    - https://opengeometadata.org/scripts/
+    - https://opengeometadata.org/reference/
+        - Schema: https://opengeometadata.org/ogm-aardvark/
+        - References URIs: https://opengeometadata.org/reference-uris/
+        - OGM Aardvark JSON Schema: https://opengeometadata.org/schema/geoblacklight-schema-aardvark.json
+        - glossary: https://opengeometadata.org/about-ogm-aardvark/#terminology
+        
