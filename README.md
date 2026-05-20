@@ -6,12 +6,25 @@ Maybe it will be a library some day?
 
 **Requirements**:
 
-* Python 3
+* mise
+* Python 3.12
 * Jupyter Notebook (https://jupyter.org/install)
 * Pandas (https://pandas.pydata.org/getting_started.html)
 * Numpy* (https://numpy.org/install/)
 
 *only needed for `clean-validate`
+
+## Environment
+
+This repo uses `mise` to pin the Python version and a local `.venv` for dependencies.
+
+```bash
+mise install
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python -m ipykernel install --user --name ogm-py --display-name "Python (ogm-py)"
+```
 
 ## export-aardvark-json
 
